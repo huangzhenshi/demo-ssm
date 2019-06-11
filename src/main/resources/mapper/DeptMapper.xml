@@ -8,6 +8,6 @@
     </resultMap>
 
     <select id="listDepts" resultMap="deptMap">
-        select id,name from dept;
+        select id,name from dept ;
     </select>
 </mapper>
