@@ -1,5 +1,8 @@
 package com.example.demo.ssm.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.ssm.entity.User;
 import com.example.demo.ssm.mapper.UserMapper;
 import com.example.demo.ssm.service.UserService;
@@ -29,9 +32,21 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> listUsers(){
         userMapper.test();
+        testPage();
         return userMapper.listUsers();
     }
 
+    public void testPage() {
+        System.out.println("----- baseMapper 自带分页 ------");
+        Page<User> page = new Page<>(1, 2);
+
+        IPage<User> userIPage = userMapper.selectPage(page, new QueryWrapper<User>().gt("age", 6));
+        System.out.println("总条数 ------> " + userIPage.getTotal());
+        System.out.println("当前页数 ------> " + userIPage.getCurrent());
+        System.out.println("当前每页显示数 ------> " + userIPage.getSize());
+
+        System.out.println("----- baseMapper 自带分页 ------");
+    }
 
 
 }

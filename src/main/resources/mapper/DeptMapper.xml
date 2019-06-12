@@ -10,4 +10,7 @@
     <select id="listDepts" resultMap="deptMap">
         select id,name from dept;
     </select>
+    <select id="listDeptsByDeptName" resultType="com.example.demo.ssm.entity.Dept">
+
+    </select>
 </mapper>

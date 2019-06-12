@@ -1,4 +1,4 @@
-package com.example.demo.ssm;
+package com.example.demo.ssm.config;
 
 import com.baomidou.mybatisplus.autoconfigure.SpringBootVFS;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;

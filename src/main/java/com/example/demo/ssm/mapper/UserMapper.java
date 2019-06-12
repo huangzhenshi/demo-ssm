@@ -7,8 +7,9 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface UserMapper extends BaseMapper<User> {
-    @Select("select * from user;")
+    @Select("select * from test_user;")
     List<User> listUsers();
 
     List<User> test();
+
 }
