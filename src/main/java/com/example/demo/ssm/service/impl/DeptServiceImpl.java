@@ -12,9 +12,9 @@ import java.util.List;
 @Service
 public class DeptServiceImpl implements DeptService {
     @Autowired
-    DeptMapper deptDao;
+    DeptMapper deptMapper;
 
     public List<Dept> listDepts(){
-        return deptDao.listDepts();
+        return deptMapper.listDepts();
     }
 }
